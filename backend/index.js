@@ -55,8 +55,16 @@ mongoose.connection.on('disconnected', () => {
 const orderRoutes = require('./routes/orders');
 app.use('/api/orders', orderRoutes);
 
+// Add a root route for Vercel health check
+app.get('/', (req, res) => {
+  res.send('hi');
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error('Error:', err);
   res.status(500).json({ message: 'Something went wrong!', error: err.message });
-}); 
+});
+
+// Remove app.listen and export the app for Vercel
+module.exports = app; 
