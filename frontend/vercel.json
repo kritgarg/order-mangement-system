@@ -2,10 +2,10 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://rolling-mill-orders-backend.vercel.app/api/:path*"
+      "destination": "https://order-mangement-system.vercel.app/api/:path*"
     }
   ],
   "builds": [
     { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "dist" } }
   ]
-} 
+}
