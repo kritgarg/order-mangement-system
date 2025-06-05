@@ -13,7 +13,7 @@ app.use(cors({
     'http://localhost:8080',
     'http://127.0.0.1:8080',
     'https://cs-order-management.netlify.app', // Netlify frontend
-    'https://your-vercel-frontend-url.vercel.app' // (If you deploy frontend on Vercel, add its URL here)
+    'https://order-mangement-system-kjhh.vercel.app/' // (If you deploy frontend on Vercel, add its URL here)
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
@@ -28,7 +28,7 @@ app.use((req, res, next) => {
 });
 
 // MongoDB Connection
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://krishgarg926:fHyy4iwgIAYguMhI@cluster0.6z00fwj.mongodb.net/rolling-mill';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://krishgarg926:<db_password>@cluster0.6z00fwj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
